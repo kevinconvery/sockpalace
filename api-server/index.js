@@ -3,7 +3,6 @@ const app = express();
 const mountRoutes = require('./routes');
 const port = 4000;
 const morgan = require('morgan');
-const db = require('./db');
 
 app.use(morgan('tiny'));
 mountRoutes(app);

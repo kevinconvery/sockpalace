@@ -2,6 +2,9 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
 
 const Deals = props => {
   return (
@@ -15,6 +18,12 @@ const Deals = props => {
           <Button variant="primary">Deals Deals Deals</Button>
         </p>
       </Jumbotron>
+      <Row>
+        <Col>
+        </Col>
+        <Col>
+        </Col>
+      </Row>
     </Container>
   );
 }

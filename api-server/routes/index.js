@@ -1,5 +1,7 @@
-const socks = require('./socks');
+const products = require('./products');
+const login = require('./login');
 
 module.exports = app => {
-  app.use('/socks', socks);
+  app.use('/products', products),
+  app.use('/login', login)
 }
