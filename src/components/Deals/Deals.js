@@ -13,6 +13,19 @@ const Deals = props => {
     getCardData();
   }, [])
 
+  const convertToCurrency = amount => {
+    const dollars = Math.floor(amount / 100);
+    let cents = amount % 100;
+    if (cents === 0) {
+      cents = '00';
+    } else if (cents < 10) {
+      cents = `0${cents}`;
+    } else {
+      cents = `${cents}`;
+    }
+    return `${dollars}.${cents}`;
+  }
+
   const getCardData = async () => {
     try {
       const response = await fetch('/products/discount/0');
@@ -50,6 +63,9 @@ const Deals = props => {
                 <Card.Img variant="top" src={imageUrl} style={{ height: '20rem' }} />
                 <Card.Body>
                   <Card.Title>{item.name}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">
+                    ${convertToCurrency(item.sale_price)}
+                  </Card.Subtitle>
                   <Card.Text>
                     {item.description}
                   </Card.Text>

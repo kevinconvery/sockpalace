@@ -2,8 +2,6 @@ const Router = require('express-promise-router');
 const db = require('../db');
 const router = new Router();
 
-module.exports = router;
-
 router.get('/', async (req, res) => {
   const { rows } = await db.query('SELECT * FROM products');
   res.send(rows);
@@ -21,3 +19,5 @@ router.get('/discount/:amount', async (req, res) => {
   const { rows } = await db.query('SELECT * FROM products WHERE discount > $1', [amount]);
   res.send(rows);
 })
+  
+module.exports = router;

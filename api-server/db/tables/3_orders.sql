@@ -1,6 +1,5 @@
-DROP TABLE orders;
+DROP TABLE orders CASCADE;
 CREATE TABLE orders(
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
-  product_id INTEGER REFERENCES products(id),
-)
+  user_id INTEGER REFERENCES users(id)
+);
