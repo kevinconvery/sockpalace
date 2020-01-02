@@ -3,6 +3,7 @@ import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import Sales from './components/Sales/Sales';
 import Deals from './components/Deals/Deals';
+import Register from './components/Auth/Register/Register';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {
@@ -19,6 +20,9 @@ const App = () => {
         <Header />
 
         <Switch>
+          <Route path="/register">
+            <Register />
+          </Route>
           <Route path="/deals">
             <Deals />
           </Route>

@@ -44,14 +44,6 @@ const Deals = props => {
         <p>
           Try on some budget styles that won't put a hole in your pocketbook!
         </p>
-        <p>
-          <Button 
-            variant="primary"
-            onClick={getCardData}
-          >
-            Deals Deals Deals
-          </Button>
-        </p>
       </Jumbotron>
       <Row className="mt-5 mb-3 justify-content-center">
         {
@@ -59,20 +51,20 @@ const Deals = props => {
             const imageUrl = `/assets/images/${item.image_url}`;
             return (
               <Col className="col-4">
-              <Card style={{ width: '18rem' }} className="mx-5">
-                <Card.Img variant="top" src={imageUrl} style={{ height: '20rem' }} />
-                <Card.Body>
-                  <Card.Title>{item.name}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    ${convertToCurrency(item.sale_price)}
-                  </Card.Subtitle>
-                  <Card.Text>
-                    {item.description}
-                  </Card.Text>
-                  <Button variant="primary">Browse Here!</Button>
-                </Card.Body>
-              </Card>
-            </Col>
+                <Card style={{ width: '18rem' }} className="mx-5">
+                  <Card.Img variant="top" src={imageUrl} style={{ height: '20rem' }} />
+                  <Card.Body>
+                    <Card.Title>{item.name}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">
+                      ${convertToCurrency(item.sale_price)}
+                    </Card.Subtitle>
+                    <Card.Text>
+                      {item.description}
+                    </Card.Text>
+                    <Button variant="primary">Add To Order</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
             )
           })
         }
