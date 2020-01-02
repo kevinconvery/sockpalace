@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const { rows } = await db.query('SELECT * FROM products WHERE id = $1', [id]);
-  res.send(rows[0]); 
+  res.send(rows[0]);
 })
 
 // Only find discounted items
