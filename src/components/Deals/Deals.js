@@ -13,6 +13,7 @@ const Deals = props => {
     getCardData();
   }, [])
 
+  // Returns the currency as a string amount.
   const convertToCurrency = amount => {
     const dollars = Math.floor(amount / 100);
     let cents = amount % 100;
@@ -24,6 +25,14 @@ const Deals = props => {
       cents = `${cents}`;
     }
     return `${dollars}.${cents}`;
+  }
+
+  // Applies the discount on the product to the item,
+  // returning the discounted price
+  const applyDiscount = item => {
+    const discountedPrice = item.sale_price - Math.floor(item.sale_price * (item.discount / 100));
+    console.log(`Discounted price: ${discountedPrice}`);
+    return convertToCurrency(discountedPrice);
   }
 
   const getCardData = async () => {
@@ -50,13 +59,13 @@ const Deals = props => {
           cardData && cardData.map((item) => {
             const imageUrl = `/assets/images/${item.image_url}`;
             return (
-              <Col className="col-4">
+              <Col className="col-4" key={item.id}>
                 <Card style={{ width: '18rem' }} className="mx-5">
                   <Card.Img variant="top" src={imageUrl} style={{ height: '20rem' }} />
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">
-                      ${convertToCurrency(item.sale_price)}
+                      ${convertToCurrency(item.sale_price)} Disc ${applyDiscount(item)}
                     </Card.Subtitle>
                     <Card.Text>
                       {item.description}

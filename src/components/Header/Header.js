@@ -18,7 +18,6 @@ const Header = props => {
     } catch (err) {
       console.error(err);
     }
-
   }
 
   return (
