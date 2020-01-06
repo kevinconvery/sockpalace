@@ -147,13 +147,27 @@ const Register = props => {
             <Col lg={4}>
               <Form.Group controlId="formBasicProvince">
                 <Form.Label className="d-flex justify-content-start mx-2 mb-2">Province</Form.Label>
-                <Form.Control
+                <Form.Control as='select'
                   required
                   type="text"
                   placeholder="Province"
                   value={province}
                   onChange={e => setProvince(e.target.value)}
-                />
+                >
+                  <option value="AB">Alberta</option>
+                  <option value="BC">British Columbia</option>
+                  <option value="MB">Manitoba</option>
+                  <option value="NB">New Brunswick</option>
+                  <option value="NL">Newfoundland and Labrador</option>
+                  <option value="NT">Northwest Territories</option>
+                  <option value="NS">Nova Scotia</option>
+                  <option value="NU">Nunavut</option>
+                  <option value="ON">Ontario</option>
+                  <option value="PE">Prince Edward Island</option>
+                  <option value="QC">Quebec</option>
+                  <option value="SK">Saskatchewan</option>
+                  <option value="YK">Yukon</option>
+                </Form.Control> 
               </Form.Group>              
             </Col>
             <Col lg={2}>
