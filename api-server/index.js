@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 app.use(morgan('tiny'));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 mountRoutes(app);
 
 app.get('/', (req, res) => res.send("Hello From Sock Palace!"));
