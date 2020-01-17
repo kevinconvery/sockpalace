@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './Register.css';
 
@@ -53,7 +52,7 @@ const Register = props => {
         <Form onSubmit={handleSubmit}>
           <Form.Row className="d-flex justify-content-center">
             <Col lg={5}>
-              <Form.Group controlId="formBasicUsername">
+              <Form.Group controlId="username">
                 <Form.Label className="d-flex justify-content-start mx-2 mb-2">User name</Form.Label>
                 <Form.Control
                   required
@@ -65,7 +64,7 @@ const Register = props => {
               </Form.Group>
             </Col>
             <Col lg={5}>
-              <Form.Group controlId="formBasicEmail">
+              <Form.Group controlId="email">
                 <Form.Label className="d-flex justify-content-start mx-2 mb-2">Email address</Form.Label>
                 <Form.Control
                   required
@@ -79,7 +78,7 @@ const Register = props => {
           </Form.Row>
           <Form.Row className="d-flex justify-content-center">
             <Col lg={5}>
-              <Form.Group controlId="formBasicFirstName">
+              <Form.Group controlId="firstName">
                 <Form.Label className="d-flex justify-content-start mx-2 mb-2">First name</Form.Label>
                 <Form.Control
                   required
@@ -91,7 +90,7 @@ const Register = props => {
               </Form.Group>
             </Col>
             <Col lg={5}>
-              <Form.Group controlId="formBasicLastName">
+              <Form.Group controlId="lastName">
                 <Form.Label className="d-flex justify-content-start mx-2 mb-2">Last name</Form.Label>
                 <Form.Control
                   required
@@ -105,7 +104,7 @@ const Register = props => {
           </Form.Row>
           <Form.Row className="d-flex justify-content-center">
             <Col lg={10}>
-              <Form.Group controlId="formBasicPassword">
+              <Form.Group controlId="password">
                 <Form.Label className="d-flex justify-content-start mx-2 mb-2">Password</Form.Label>
                 <Form.Control
                   required
@@ -119,7 +118,7 @@ const Register = props => {
           </Form.Row>
           <Form.Row className="d-flex justify-content-center">
             <Col lg={10}>
-              <Form.Group controlId="formBasicAddress">
+              <Form.Group controlId="address">
                 <Form.Label className="d-flex justify-content-start mx-2 mb-2">Address</Form.Label>
                 <Form.Control
                   required
@@ -133,7 +132,7 @@ const Register = props => {
           </Form.Row>
           <Form.Row className="d-flex justify-content-center">
             <Col lg={4}>
-              <Form.Group controlId="formBasicCity">
+              <Form.Group controlId="city">
                 <Form.Label className="d-flex justify-content-start mx-2 mb-2">City</Form.Label>
                 <Form.Control
                   required
@@ -145,7 +144,7 @@ const Register = props => {
               </Form.Group>
             </Col>
             <Col lg={4}>
-              <Form.Group controlId="formBasicProvince">
+              <Form.Group controlId="province">
                 <Form.Label className="d-flex justify-content-start mx-2 mb-2">Province</Form.Label>
                 <Form.Control as='select'
                   required
@@ -171,7 +170,7 @@ const Register = props => {
               </Form.Group>              
             </Col>
             <Col lg={2}>
-              <Form.Group controlId="formBasicPostalCode">
+              <Form.Group controlId="postalCode">
                 <Form.Label className="d-flex justify-content-start mx-2 mb-2">Postal code</Form.Label>
                 <Form.Control
                   required

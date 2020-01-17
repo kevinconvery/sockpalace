@@ -2,16 +2,12 @@ const Router = require('express-promise-router');
 const db = require('../db');
 const router = new Router();
 
-
-router.get('/', (req, res) => {
-  res.send('Login route hit!');
-})
-
+// POST /login/validate
+// Validates the user when they log in
+// Needs to include bcrypt or something of that nature for password
 router.post('/validate', async (req, res) => {
   try {
-    console.log("VALIDATE FUNCTION CALLED");
     // compare the username against existing username:
-    console.log(`req.body.username is ${req.body.username}`);
     const { rows } = await db.query(`SELECT * FROM users WHERE username = $1;`, [req.body.username])
     if (rows.length === 0) {
       console.log("Invalid login!");

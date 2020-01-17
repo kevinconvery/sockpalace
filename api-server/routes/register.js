@@ -4,7 +4,7 @@ const router = new Router();
 
 router.post('/new', async (req, res) => {
   try {
-    console.log(`REQ BODY IS ${req.body.username}`)
+    console.log(`Username is ${req.body.username}`)
     const { username, email, password, firstName, lastName, address, city, province, postalCode } = req.body;
     await db.query(`
       INSERT INTO users (username, email, password, first_name, last_name, address, city, province, postal_code) 

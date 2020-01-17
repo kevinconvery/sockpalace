@@ -12,9 +12,11 @@ const Header = props => {
 
   const handleSearch = async () => {
     try {
-      const response = await fetch(`/products`);
-      const data = await response.json();
-      console.log(data);
+      if (searchValue) {
+        const response = await fetch(`/products/search/${searchValue}`);
+        const data = await response.json();
+        console.log(data);
+      }
     } catch (err) {
       console.error(err);
     }
@@ -52,6 +54,7 @@ const Header = props => {
               Search
             </Button>
           </Form>
+          
           <Nav.Link href="/login">Login</Nav.Link>
           <Nav.Link href="/register">Register</Nav.Link>
         </Navbar.Collapse>

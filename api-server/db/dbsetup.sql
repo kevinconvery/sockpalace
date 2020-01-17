@@ -7,3 +7,4 @@
 \i ./tables/4_order_items.sql
 -- seeds
 \i ./seeds/1_product_seed.sql
+\i ./seeds/2_user_seed.sql

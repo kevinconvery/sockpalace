@@ -13,5 +13,4 @@ CREATE TABLE users(
   postal_code CHAR(6)
 );
 
-INSERT INTO users (username, email, password, first_name, last_name, address, city, province, postal_code)
-  VALUES ('test', 'test@test.com', 'test', 'Test', 'User', '123 Test Lane', 'Test', 'ON', 'M5M5M5');
+

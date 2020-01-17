@@ -14,15 +14,7 @@ INSERT INTO products (name, category, description, image_url, purchase_price, sa
 INSERT INTO products (name, category, description, image_url, purchase_price, sale_price, discount) VALUES
   ('Black Socks', 'Socks', 'Generic all-around good black socks.', 'blacksocks.jpg', 100, 300, 0);
 INSERT INTO products (name, category, description, image_url, purchase_price, sale_price, discount) VALUES
-  (
-    'Red Striped Long Socks', 
-    'Socks', 
-    'Good for the office environment, these bright and happy socks are sure to impress', 
-    'redstripedsocks.jpg', 
-    500, 
-    1550, 
-    0
-  );
+  ('Red Striped Long Socks', 'Socks', 'Good for the office environment, these bright and happy socks are sure to impress', 'redstripedsocks.jpg', 500, 1550, 0);
 
 -- Shirts
 INSERT INTO products (name, category, description, image_url, purchase_price, sale_price, discount) VALUES

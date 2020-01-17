@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-const mountRoutes = require('./routes');
 const port = 4000;
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mountRoutes = require('./routes');
 
 app.use(morgan('tiny'));
 app.use(bodyParser.json());
