@@ -19,13 +19,13 @@ router.post('/validate', async (req, res) => {
         if (rows[0].password === password) {
           res.json("VALID_LOGIN");
         } else {
-          res.json("INVALID_LOGIN_PASSWORDS_DO_NOT_MATCH");
+          res.json("INVALID_LOGIN_PASSWORDS_DO_NOT_MATCH")
         }
       }
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
   }
 })
 
-module.exports = router;
+module.exports = router
