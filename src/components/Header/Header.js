@@ -5,17 +5,20 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
+import { useSelector } from 'react-redux'
 
 
 const Header = props => {
   const [searchValue, setSearchValue] = useState("");
+  const isLoggedIn = useSelector(state => state.login)
 
   const handleSearch = async () => {
     try {
       if (searchValue) {
-        const response = await fetch(`/products/search/${searchValue}`);
-        const data = await response.json();
-        console.log(data);
+        const response = await fetch(`/products/search/${searchValue}`)
+        const data = await response.json()
+        console.log(data)
+        setSearchValue("")
       }
     } catch (err) {
       console.error(err);
@@ -54,9 +57,17 @@ const Header = props => {
               Search
             </Button>
           </Form>
-          {/* add conditional here to render if logged in or not: */}
-          <Nav.Link href="/login">Login</Nav.Link>
-          <Nav.Link href="/register">Register</Nav.Link>
+          {isLoggedIn ?
+            <div>
+              <h4>Welcome!</h4>
+              <Nav.Link href="/logout">Logout</Nav.Link>
+            </div>
+          :
+            <div>
+              <Nav.Link href="/login">Login</Nav.Link>
+              <Nav.Link href="/register">Register</Nav.Link>
+            </div>
+          }
         </Navbar.Collapse>
       </Navbar>
     </div>

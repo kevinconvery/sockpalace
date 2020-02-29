@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Controller from './components/Controller/Controller'
+import * as serviceWorker from './serviceWorker'
 import {createStore} from 'redux'
-import {Provider} from 'react-redux'
 import rootReducer from './reducers'
 
 const store = createStore(
@@ -13,9 +13,7 @@ const store = createStore(
 )
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>, 
+  <Controller store={store} />,
   document.getElementById('root')
 )
 
