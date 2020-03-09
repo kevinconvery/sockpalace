@@ -4,6 +4,21 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
 
 const Sales = props => {
+  const handleCreateOrder = async event => {
+    event.preventDefault()
+    try {
+      const response = await fetch('/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      })
+      return await response.json()
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <Container fluid>
       <Jumbotron className="my-3">
@@ -12,7 +27,8 @@ const Sales = props => {
           Here's some socks that we're offering first at the best prices available. Get your walk on.
         </p>
         <p>
-          <Button variant="primary">Walk On In</Button>
+          <Button variant="primary" className="mx-2">Walk On In</Button>
+          <Button variant="primary" onClick={handleCreateOrder}>Create an Order</Button>
         </p>
       </Jumbotron>
     </Container>

@@ -29,8 +29,7 @@ router.post('/', async (req, res, next) => {
   const queryText = "INSERT INTO orders (user_id, time_created) VALUES ($1, $2) RETURNING *"
   try {
     const { order } = await db.query(queryText, [userId, Date.now()])
-    console.log("Order details")
-    console.log(order)
+    console.log(`Order details: ${order}`)
   } catch (err) {
     console.log(err)
   }
