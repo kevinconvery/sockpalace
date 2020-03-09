@@ -1,11 +1,10 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Jumbotron from 'react-bootstrap/Jumbotron'
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
-import '../../styles/Home.css'
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 const Home = props => (
   <Container fluid>
@@ -29,12 +28,7 @@ const Home = props => (
               Some fantastic deals at low, low prices! We have some of
               the most awesome designs on the Internet!
             </Card.Text>
-            <Button 
-              variant="primary"
-              href="/deals"
-            >
-              Browse Here!
-            </Button>
+            <Button variant="primary">Browse Here!</Button>
           </Card.Body>
         </Card>
       </Col>
@@ -47,12 +41,7 @@ const Home = props => (
               Rare sock printings that might not be re-run! Awesome designs that you
               might not find anywhere else!
             </Card.Text>
-            <Button 
-              variant="primary"
-              href="/sales"
-            >
-              Or Browse Here!
-            </Button>
+            <Button variant="primary">Or Browse Here!</Button>
           </Card.Body>
         </Card>
       </Col>
