@@ -26,13 +26,23 @@ const Sales = props => {
         <p>
           Here's some socks that we're offering first at the best prices available. Get your walk on.
         </p>
-        <p>
-          <Button variant="primary" className="mx-2">Walk On In</Button>
-          <Button variant="primary" onClick={handleCreateOrder}>Create an Order</Button>
-        </p>
       </Jumbotron>
+      <p>
+        <Button 
+          variant="primary" 
+          className="mx-2"
+        >
+          Walk On In
+        </Button>
+        <Button 
+          variant="primary" 
+          onClick={handleCreateOrder}
+        >
+          Create an Order
+        </Button>
+      </p>
     </Container>
-  );
+  )
 }
 
-export default Sales;
+export default Sales
