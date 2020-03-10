@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+$main-background-colour: #eba834;
+$nav-font-colour: #143642;
+$content-colour: #291528;
+$font-stack: 'Inter', sans-serif;
+
+body {
+  background-color: $main-background-colour;
+  font-family: $font-stack;
+}
+
