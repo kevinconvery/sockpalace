@@ -18,3 +18,21 @@
     const discountedPrice = item.sale_price - Math.floor(item.sale_price * (item.discount / 100));
     return convertToCurrency(discountedPrice);
   }
+
+  // Retrieves data based on the task provided to the getData function.
+  // e.g. DEALS retrieves the Deals view's data, etc.
+  export const getData = async view => {
+    try {
+      switch(view) {
+        case "DEALS":
+          const response = await fetch('/products/discount/0')
+          // const data = await response.json()
+          return await response.json()
+        case "SALES": break;
+        case "MAIN": break;
+        default: break
+      }
+    } catch (err) {
+      console.error(err)
+    }
+  }

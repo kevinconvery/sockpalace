@@ -8,4 +8,19 @@ p {
   color: #291528;
 }
 
+.centre-text {
+  text-align: center;
+}
+
+.align-right {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.medium-card {
+  width: 20rem;
+  height: 36rem;
+}
+
 /*# sourceMappingURL=Home.css.map */

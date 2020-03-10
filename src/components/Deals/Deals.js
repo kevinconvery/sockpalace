@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
-import { applyDiscount, convertToCurrency } from '../../helpers/helpers';
+import { applyDiscount, convertToCurrency, getData } from '../../helpers/helpers';
 
 const Deals = props => {
   const [cardData, setCardData] = useState([]);
@@ -15,13 +15,8 @@ const Deals = props => {
   }, [])
   
   const getCardData = async () => {
-    try {
-      const response = await fetch('/products/discount/0');
-      const data = await response.json();
-      setCardData(data);
-    } catch (err) {
-      console.error(err);
-    }
+    const data = await getData("DEALS")
+    setCardData(data)
   }
   
   return (
@@ -38,7 +33,7 @@ const Deals = props => {
             const imageUrl = `/assets/images/${item.image_url}`;
             return (
               <Col className="col-4" key={item.id}>
-                <Card style={{ width: '18rem' }} className="mx-5">
+                <Card style={{ width: '24rem', height: '36rem' }} className="mx-5">
                   <Card.Img variant="top" src={imageUrl} style={{ height: '20rem' }} />
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
